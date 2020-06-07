@@ -5,7 +5,7 @@ setup(
     version='1.0',
     py_modules=['news'],
     install_requires=[
-        'Click','requests', 'pyfiglet'
+        'Click', 'requests', 'pyfiglet', 'termcolor'
     ],
     entry_points='''
         [console_scripts]
