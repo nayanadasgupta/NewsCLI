@@ -4,7 +4,7 @@ from collections import OrderedDict
 from pyfiglet import figlet_format
 from termcolor import colored
 
-api_key = "7Rli8AUFCxc0wmSEf8CxAp9AUp86Iejh"
+api_key = "APIKEY"
 
 
 class NaturalOrderGroup(click.Group):
