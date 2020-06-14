@@ -39,7 +39,7 @@ def cli():
 @click.command()
 @click.option("--count", default=1, help="Number of top stories.", type=int)
 @click.option('--type', default='main',
-              help="Type of top stories. Options are main (default), arts, business, health, politics, science," +
+              help="Type of top stories. Options are main (default), arts, business, health, politics, science, " +
                    "tech and world.")
 def topstories(count, type):
     """
@@ -105,7 +105,7 @@ def mostviewed(count):
 
 
 @click.command()
-@click.option("--count", default=1, help="Number of popular stories.", type=int)
+@click.option("--count", default=1, help="Number of recent stories.", type=int)
 def mostrecent(count):
     """
         Most recent articles published.
