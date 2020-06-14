@@ -4,7 +4,7 @@ from collections import OrderedDict
 from pyfiglet import figlet_format
 from termcolor import colored
 
-api_key = "7Rli8AUFCxc0wmSEf8CxAp9AUp86Iejh"
+api_key = "API_KEY"
 
 
 class NaturalOrderGroup(click.Group):
@@ -39,8 +39,8 @@ def cli():
 @click.command()
 @click.option("--count", default=1, help="Number of top stories.", type=int)
 @click.option('--type', default='main',
-              help="Type of top stories. Options are main, arts, business, health, politics, science," +
-                   "tech and world. Default is main.")
+              help="Type of top stories. Options are main (default), arts, business, health, politics, science," +
+                   "tech and world.")
 def topstories(count, type):
     """
     Top Stories.
@@ -75,7 +75,7 @@ def topstories(count, type):
     else:
         try:
             for i in range(count):
-                click.echo(colored(response.json()['results'][i]['title'],"red"))
+                click.echo(colored(response.json()['results'][i]['title'], "red"))
                 click.echo(response.json()['results'][i]['abstract'])
                 click.echo(response.json()['results'][i]['url'])
                 click.echo(response.json()['results'][i]['updated_date'] + "\n")
@@ -96,7 +96,7 @@ def mostviewed(count):
     else:
         try:
             for i in range(count):
-                click.echo(colored(response.json()['results'][i]['title'],"red"))
+                click.echo(colored(response.json()['results'][i]['title'], "red"))
                 click.echo(response.json()['results'][i]['abstract'])
                 click.echo(response.json()['results'][i]['url'])
                 click.echo(response.json()['results'][i]['updated'] + "\n")
@@ -117,7 +117,7 @@ def mostrecent(count):
     else:
         try:
             for i in range(count):
-                click.echo(colored(response.json()['results'][i]['title'],"red"))
+                click.echo(colored(response.json()['results'][i]['title'], "red"))
                 click.echo(response.json()['results'][i]['abstract'])
                 click.echo(response.json()['results'][i]['url'])
                 click.echo(response.json()['results'][i]['updated_date'] + "\n")
@@ -139,7 +139,7 @@ def search(keyword, count):
     else:
         try:
             for i in range(count):
-                click.echo(colored(response.json()['response']['docs'][i]['abstract'],"red"))
+                click.echo(colored(response.json()['response']['docs'][i]['abstract'], "red"))
                 click.echo(response.json()['response']['docs'][i]['lead_paragraph'])
                 click.echo(response.json()['response']['docs'][i]['web_url'])
                 click.echo(response.json()['response']['docs'][i]['pub_date'] + "\n")
@@ -148,7 +148,7 @@ def search(keyword, count):
 
 
 @click.command()
-@click.option("--type", default="fiction", help="Types of books. Options are fiction, nonfiction. Default is fiction.")
+@click.option("--type", default="fiction", help="Types of books. Options are fiction (default) and nonfiction.")
 @click.option("--count", default=1, help="Number of stories.", type=int)
 def books(type, count):
     """
